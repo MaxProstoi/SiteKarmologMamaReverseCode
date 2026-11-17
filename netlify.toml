@@ -1,5 +1,6 @@
 [build]
   publish = "site"
+  command = "sh scripts/inject-umami.sh site"
 
 [[headers]]
   for = "/*"

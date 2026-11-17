@@ -18,6 +18,8 @@
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/inter-normal-300-cyrillic.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/cormorant-normal-400-cyrillic.woff2">
+  <!-- TODO: Umami Cloud. ID подставляется на сборке из переменной Netlify UMAMI_WEBSITE_ID (scripts/inject-umami.sh) -->
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="UMAMI_WEBSITE_ID"></script>
   <script>(function(){try{var l=localStorage.getItem('site_lang');if(l==='uk'||l==='ru'){var d=document.documentElement;d.setAttribute('data-lang',l);d.setAttribute('lang',l);}}catch(e){}document.addEventListener('site:langchange',function(e){document.documentElement.setAttribute('lang',e.detail&&e.detail.lang==='uk'?'uk':'ru');});})();</script>
 <style>
 @font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:400;font-display:swap;src:url(/assets/fonts/cormorant-italic-400-cyrillic-ext.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}
