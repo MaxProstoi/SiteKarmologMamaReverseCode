@@ -46,7 +46,7 @@
 
 **Аналитика и приватность:**
 - ✅ Разрешена только **Umami Cloud без cookie**: `<script defer src="https://cloud.umami.is/script.js" data-website-id="UMAMI_WEBSITE_ID">` в `<head>` страниц, клики через `data-umami-event`
-- ✅ ID не хранится в репозитории: подставляется на сборке Netlify из переменной `UMAMI_WEBSITE_ID` (`scripts/inject-umami.sh`, команда в `netlify.toml`). Если переменной нет, тег убирается
+- ✅ В исходниках стоит заглушка `UMAMI_WEBSITE_ID`. Публичный website ID лежит в `netlify.toml` (`[build.environment]`) и подставляется на сборке скриптом `scripts/inject-umami.sh`. Если ID не задан, тег убирается. Заглушку в `site/*.html` руками не менять
 - ❌ Любые другие трекеры и аналитика (GA, GTM, Meta Pixel, Яндекс.Метрика и т.п.), всё, что ставит cookie или пишет трекинг в `localStorage`
 - ❌ Cookie-баннеры, всплывающие окна, попапы
 - ℹ️ Исключение для `localStorage`: ключ `site_lang` хранит только выбранный язык и не является трекингом

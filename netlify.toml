@@ -2,6 +2,10 @@
   publish = "site"
   command = "sh scripts/inject-umami.sh site"
 
+  # Публичный website ID Umami Cloud (виден в HTML, секретом не является)
+  [build.environment]
+    UMAMI_WEBSITE_ID = "edbdc3a0-cf2a-42d5-bf16-2cb6aa0bbfcf"
+
 [[headers]]
   for = "/*"
   [headers.values]

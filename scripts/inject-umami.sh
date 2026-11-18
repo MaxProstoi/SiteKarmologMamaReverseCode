@@ -12,9 +12,9 @@ find "$DIR" -name '*.html' | while read -r f; do
   tmp="$f.tmp"
   if [ -n "$ID" ]; then
     case "$ID" in *[!A-Za-z0-9-]*) echo "UMAMI_WEBSITE_ID содержит недопустимые символы" >&2; exit 1;; esac
-    sed "s/UMAMI_WEBSITE_ID/$ID/g" "$f" > "$tmp"
+    grep -v 'TODO: Umami Cloud' "$f" | sed "s/data-website-id=\"UMAMI_WEBSITE_ID\"/data-website-id=\"$ID\"/" > "$tmp"
   else
-    grep -v 'cloud.umami.is' "$f" > "$tmp"
+    grep -v -e 'cloud.umami.is' -e 'TODO: Umami Cloud' "$f" > "$tmp"
   fi
   mv "$tmp" "$f"
 done
